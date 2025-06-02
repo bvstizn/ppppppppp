@@ -1,9 +1,16 @@
-
 package com.mycompany.bostonbanks2;
 
 public class CuentaCorriente extends Cuenta {
+    public CuentaCorriente() {
+        super();
+    }
+
     public CuentaCorriente(int numero) {
         super(numero);
+    }
+
+    public CuentaCorriente(int numero, int saldoInicial) {
+        super(numero, saldoInicial);
     }
 
     @Override
