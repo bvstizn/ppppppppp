@@ -1,8 +1,16 @@
 package com.mycompany.bostonbanks2;
 
 public class CuentaAhorro extends Cuenta {
+    public CuentaAhorro() {
+        super();
+    }
+
     public CuentaAhorro(int numero) {
         super(numero);
+    }
+
+    public CuentaAhorro(int numero, int saldoInicial) {
+        super(numero, saldoInicial);
     }
 
     @Override
