@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class BostonBankS2 {
 
     private static ArrayList<Cliente> clientes = new ArrayList<>();
-    private static int numeroCuentaBase = 123450000; // Para que las cuentas tengan números únicos
 
     private static Cliente buscarClientePorRut(String rut) {
         for (Cliente c : clientes) {
@@ -101,8 +100,7 @@ public class BostonBankS2 {
                     String domicilio = scanner.nextLine();
                     String comuna = validarTexto(scanner, "Comuna: ");
                     String telefono = validarTelefono(scanner, "Teléfono: ");
-                    int baseCuenta = numeroCuentaBase + clientes.size() * 10; // Bloques de 10 por cliente
-                    Cliente nuevoCliente = new Cliente(rut, nombre, apP, apM, domicilio, comuna, telefono, baseCuenta);
+                    Cliente nuevoCliente = new Cliente(rut, nombre, apP, apM, domicilio, comuna, telefono);
                     clientes.add(nuevoCliente);
                     System.out.println("Cliente registrado con éxito.");
                     break;
