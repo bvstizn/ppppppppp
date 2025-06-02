@@ -2,7 +2,7 @@ package com.mycompany.bostonbanks2;
 
 import java.util.ArrayList;
 
-public class Cliente {
+public class Cliente implements Mostrable {
     private String rut;
     private String nombre;
     private String apellidoP;
@@ -12,7 +12,7 @@ public class Cliente {
     private String telefono;
     private ArrayList<Cuenta> cuentas;
 
-    public Cliente(String rut, String nombre, String apellidoP, String apellidoM, String domicilio, String comuna, String telefono, int numeroCuentaBase) {
+    public Cliente(String rut, String nombre, String apellidoP, String apellidoM, String domicilio, String comuna, String telefono) {
         this.rut = rut;
         this.nombre = nombre;
         this.apellidoP = apellidoP;
@@ -21,10 +21,10 @@ public class Cliente {
         this.comuna = comuna;
         this.telefono = telefono;
         this.cuentas = new ArrayList<>();
-        // Crea las tres cuentas al registrar el cliente
-        cuentas.add(new CuentaCorriente(numeroCuentaBase + 1));
-        cuentas.add(new CuentaAhorro(numeroCuentaBase + 2));
-        cuentas.add(new CuentaCredito(numeroCuentaBase + 3));
+        // Crea las tres cuentas con número aleatorio de 9 dígitos
+        cuentas.add(new CuentaCorriente());
+        cuentas.add(new CuentaAhorro());
+        cuentas.add(new CuentaCredito());
     }
 
     public String getRut() {
@@ -42,6 +42,7 @@ public class Cliente {
         return null;
     }
 
+    @Override
     public void mostrarDatos() {
         System.out.println("----- Datos del Cliente -----");
         System.out.println("Rut: " + rut);
