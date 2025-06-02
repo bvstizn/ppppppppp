@@ -3,9 +3,19 @@ package com.mycompany.bostonbanks2;
 public class CuentaCredito extends Cuenta {
     private int cupoCredito = 500000; // Cupo de ejemplo
 
+    public CuentaCredito() {
+        super();
+        this.saldo = cupoCredito;
+    }
+
     public CuentaCredito(int numero) {
         super(numero);
-        this.saldo = cupoCredito; // El "saldo" disponible es el cupo restante
+        this.saldo = cupoCredito;
+    }
+
+    public CuentaCredito(int numero, int saldoInicial) {
+        super(numero, saldoInicial);
+        if (saldoInicial > cupoCredito) this.saldo = cupoCredito;
     }
 
     @Override
